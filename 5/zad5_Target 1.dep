@@ -1,0 +1,8 @@
+Dependencies for Project 'zad5', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x51C80D6E)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\main.cpp)(0x69C8660B)()
+I (C:\Users\Jasiek\Documents\PPO\5\led.h)(0x69C86644)
+F (.\led.cpp)(0x69C86629)()
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C80D9C)
+I (C:\Users\Jasiek\Documents\PPO\5\led.h)(0x69C86644)
+F (.\stepper.cpp)(0x69C8665B)()
