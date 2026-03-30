@@ -1,0 +1,5 @@
+.\led.o: led.cpp
+.\led.o: C:\Keil\ARM\Inc\Philips\LPC21xx.H
+.\led.o: led.h
+.\led.o: stepper.h
+.\led.o: ledinv.h
