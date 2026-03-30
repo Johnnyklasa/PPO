@@ -1,0 +1,20 @@
+Dependencies for Project 'zad8b', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x51C81B7E)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\keyboard.cpp)(0x69C9C8BA)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\keyboard.o --omf_browse .\keyboard.crf --depend .\keyboard.d)
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
+I (C:\Users\Jasiek\Documents\PPO\8\8b\keyboard.h)(0x69C9C8C3)
+F (.\led.cpp)(0x69C9CEF8)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\led.o --omf_browse .\led.crf --depend .\led.d)
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
+I (C:\Users\Jasiek\Documents\PPO\8\8b\led.h)(0x69C9C31C)
+I (C:\Users\Jasiek\Documents\PPO\8\8b\stepper.h)(0x69C9C430)
+F (.\main.cpp)(0x69C9CC24)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (C:\Users\Jasiek\Documents\PPO\8\8b\stepper.h)(0x69C9C430)
+I (C:\Users\Jasiek\Documents\PPO\8\8b\led.h)(0x69C9C31C)
+I (C:\Users\Jasiek\Documents\PPO\8\8b\keyboard.h)(0x69C9C8C3)
+F (.\stepper.cpp)(0x69C9C435)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\stepper.o --omf_browse .\stepper.crf --depend .\stepper.d)
+I (C:\Keil\ARM\Inc\Philips\LPC213X.H)(0x51C81BAC)
+I (C:\Users\Jasiek\Documents\PPO\8\8b\stepper.h)(0x69C9C430)
+I (C:\Users\Jasiek\Documents\PPO\8\8b\led.h)(0x69C9C31C)
+F (.\stepper.h)(0x69C9C430)()
+F (.\led.h)(0x69C9C31C)()
+F (.\keyboard.h)(0x69C9C8C3)()
