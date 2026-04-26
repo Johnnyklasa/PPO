@@ -1,36 +1,18 @@
- #include "led.h"
-
+#include "led.h"
 
 void Delay(int iTimeInMs){
-
-    int iCycle;
-
-    int iNumberOfCycles = 10000 * iTimeInMs;
-
-    
-
-    for (iCycle = 0; iCycle < iNumberOfCycles; iCycle++) {}
-
+	int iCycle;
+	int iNumberOfCycles = 10000 * iTimeInMs;
+	
+	for (iCycle = 0; iCycle < iNumberOfCycles; iCycle++) {}
 }
-
- 
-
-
+Led MyLed;
 int main(void)
-
 {
+	MyLed.Init();
 
-    Led myLed;
-
-    myLed.Init();
-
-
-    while(1){
-
-        Delay(100);
-
-        myLed.StepLeft();
-			
-    }
-} 
-
+	while(1){
+		Delay(100);
+		MyLed.StepLeft();
+	}
+}

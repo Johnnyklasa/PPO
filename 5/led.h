@@ -1,14 +1,9 @@
 #ifndef LED_H
-#define LED_H
-
+#define LED_H 
 class Led{
-		protected: 
-		void On(unsigned char ucLedIndex);
-		public:
-		Led();
+	protected:
+	Led();
+	void On(unsigned char ucLedIndex);
 
-};
-
-enum LedState {STEP_LEFT, STEP_RIGHT, LED_STOP};
-
-#endif 
+}; 
+#endif

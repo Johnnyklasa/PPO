@@ -1,0 +1,16 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+
+void     BSP_LCD_DrawRect(uint16_t Xpos, uint16_t Ypos, uint16_t Width, uint16_t Height);
+
+int main(void)
+{
+	BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+	BSP_LCD_DrawRect(10,20,40,30);
+
+	while (true) {
+
+		HAL_Delay(1000);
+	}
+}

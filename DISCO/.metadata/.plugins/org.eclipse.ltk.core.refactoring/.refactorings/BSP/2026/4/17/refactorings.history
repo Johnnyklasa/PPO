@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BSP/MyProjects/main.cxx&apos; to &apos;2.1.cxx&apos;" description="Rename resource &apos;main.cxx&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MyProjects/main.cxx" name="2.1.cxx" stamp="1777161488971" updateReferences="true"/>
+</session>

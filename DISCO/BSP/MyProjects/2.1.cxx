@@ -1,0 +1,20 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+
+#define XPOS 10
+#define YPOS 20
+#define HEIGHT 40
+#define WIDTH 30
+
+
+int main(void)
+{
+	BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+	BSP_LCD_DrawRect(XPOS,YPOS,HEIGHT,WIDTH);
+	BSP_LED_Init(LED4);
+	while (true) {
+		BSP_LED_Toggle(LED4);
+		HAL_Delay(1000);
+	}
+}

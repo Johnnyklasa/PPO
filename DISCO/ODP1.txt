@@ -1,0 +1,7 @@
+1. PPO\DISCO\BSP\Drivers\BSP\STM32F429I-Discovery
+2. EEPROM SDRAM GYROSCOPE
+3. PPO\DISCO\BSP\Drivers\STM32F4xx_HAL_Driver\Src
+4. ADC, DAC, CAN, I2C, USB, SRAM
+5. użycie 2 mainów
+6. Kompilowane są tylko katalogi oznaczone jako źródłowe 
+7. 131mb  37mb roznica 106mb
