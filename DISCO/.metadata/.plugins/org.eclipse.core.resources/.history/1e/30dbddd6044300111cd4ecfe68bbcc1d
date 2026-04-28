@@ -1,0 +1,24 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+#include <stm32f429i_discovery_ts.h>
+#include <cstdio>
+
+#define LINE_NUMBER 1
+
+BSP_TS_Init(uint16_t XSize, uint16_t YSize);
+
+
+int main(void)
+{
+
+	BSP_LCD_Init();
+	BSP_TS_Init(BSP_LCD_GetXSize(), BSP_LCD_GetYSize())
+	BSP_LCD_SetBackColor(LCD_COLOR_DARKBLUE);
+	BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+
+	sprintf(cPos, "X=%lu; Y=%lu",BSP_LCD_GetXSize(),BSP_LCD_GetYSize() );
+	BSP_LCD_DisplayStringAtLine(LINE_NUMBER,reinterpret_cast<uint8_t*>(cPos));
+	while (true) {
+	}
+}

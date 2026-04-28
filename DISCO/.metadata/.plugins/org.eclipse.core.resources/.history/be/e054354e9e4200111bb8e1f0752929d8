@@ -1,0 +1,24 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+
+#define LINE_NUMBER 1
+
+
+
+int main(void)
+{
+	char cAlpha [] = "Alpha";
+	char cCentauri [] = "Centauri";
+
+	BSP_LCD_Init();
+	BSP_LCD_SetBackColor(LCD_COLOR_DARKBLUE);
+
+	while (true) {
+
+		BSP_LCD_DisplayStringAtLine(LINE_NUMBER,reinterpret_cast<uint8_t*>(cAlpha));
+		HAL_Delay(1000);
+		BSP_LCD_DisplayStringAtLine(LINE_NUMBER, reinterpret_cast<uint8_t*>(cCentauri));
+		HAL_Delay(1000);
+	}
+}

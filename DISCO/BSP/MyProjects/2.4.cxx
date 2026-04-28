@@ -15,7 +15,7 @@ int main(void)
 	BSP_LCD_SetBackColor(LCD_COLOR_DARKBLUE);
 
 	while (true) {
-
+		BSP_LCD_ClearStringLine(LINE_NUMBER);
 		BSP_LCD_DisplayStringAtLine(LINE_NUMBER,reinterpret_cast<uint8_t*>(cAlpha));
 		HAL_Delay(1000);
 		BSP_LCD_DisplayStringAtLine(LINE_NUMBER, reinterpret_cast<uint8_t*>(cCentauri));

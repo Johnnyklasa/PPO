@@ -1,0 +1,31 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+#include <stm32f429i_discovery_ts.h>
+#include <cstdio>
+
+#define LINE_NUMBER 1
+
+
+
+
+int main(void)
+{
+	TS_StateTypeDef sDetector;
+
+	BSP_LCD_Init();
+	BSP_TS_Init(BSP_LCD_GetXSize(), BSP_LCD_GetYSize());
+	BSP_LCD_SetBackColor(LCD_COLOR_DARKBLUE);
+	BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+
+	while (true) {
+		BSP_TS_GetState(&sDetector);
+		if (sDetector.TouchDetected ==1){
+			BSP_LCD_DisplayStringAtLine(LINE_NUMBER,reinterpret_cast<uint8_t*>(reinterpret_cast<char*>("Pressed"));
+		}
+		else {
+			BSP_LCD_DisplayStringAtLine(LINE_NUMBER,reinterpret_cast<uint8_t*>("******"));
+		}
+	}
+
+}
