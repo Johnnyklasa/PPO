@@ -1,0 +1,24 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+
+#define LINE_NUMBER 1
+
+
+
+
+
+int main(void)
+{
+	unsigned int uiCounter {};
+	char cText [20];
+	BSP_LCD_Init();
+	while (true) {
+		BSP_LCD_SetBackColor(LCD_COLOR_DARKBLUE);
+		++uiCounter;
+		sprintf(cText, "%d",uiCounter);
+		BSP_LCD_DisplayStringAtLine(LINE_NUMBER,reinterpret_cast<uint8_t*>(cText));
+		HAL_Delay(300);
+
+	}
+}

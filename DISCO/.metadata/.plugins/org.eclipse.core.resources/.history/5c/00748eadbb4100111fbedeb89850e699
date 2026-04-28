@@ -1,0 +1,26 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+
+#define XPOS 10
+#define YPOS 20
+#define HEIGHT 40
+#define WIDTH 30
+#define LETTER_A 65
+#define LETTER_B 66
+
+BSP_LCD_DisplayStringAtLine(uint16_t Line, uint8_t *ptr);
+
+int main(void)
+{
+	char cAlfa [5] = "Alfa";
+	char cCentauri [5] = "Centauri"
+	BSP_LCD_Init();
+	while (true) {
+		BSP_LCD_SetBackColor(LCD_COLOR_DARKBLUE);
+		BSP_LCD_DisplayStringAtLine(1, static_cast<char> cCentauri);
+		HAL_Delay(1000);
+		BSP_LCD_DisplayChar(XPOS,YPOS,LETTER_B);
+		HAL_Delay(1000);
+	}
+}

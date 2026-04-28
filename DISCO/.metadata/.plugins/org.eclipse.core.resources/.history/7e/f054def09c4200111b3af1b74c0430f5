@@ -1,0 +1,25 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+
+#define LINE_STRINGS 0
+
+int main(void)
+{
+	BSP_LED_Init(LED4);
+	BSP_LCD_Init();
+
+	BSP_LCD_SetBackColor(LCD_COLOR_BLUE);
+	BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
+
+	char Alfa[] = "Alpha";
+	char Centa[] = "Centauri";
+
+	while (true) {
+		BSP_LCD_ClearStringLine(LINE_STRINGS);
+		BSP_LCD_DisplayStringAtLine(LINE_STRINGS, reinterpret_cast<uint8_t*>(Alfa));
+		HAL_Delay(1000);
+		BSP_LCD_DisplayStringAtLine(LINE_STRINGS, reinterpret_cast<uint8_t*>(Centa));
+		HAL_Delay(1000);
+	}
+}
