@@ -1,0 +1,8 @@
+#include "ledlcd.h"
+
+
+void  Led::On(unsigned int uiLedCtr){
+
+
+
+}

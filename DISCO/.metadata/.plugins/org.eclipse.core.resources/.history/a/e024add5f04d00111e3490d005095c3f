@@ -1,0 +1,28 @@
+#include "ledlcd.h"
+#include "KeyboardTs.h"
+
+LedLcd::LedLcd(){
+	uiCurrOn =NONE;
+	BSP_LCD_Init();
+	BSP_LCD_SetFont(&Font24);
+	unsigned int uiLCDHeight = BSP_LCD_GetYSize();
+	unsigned int uiButtonCounter;
+	for (uiButtonCounter = 0; uiButtonCounter * RectHigh< uiLCDHeight; uiButtonCounter =( uiButtonCounter * RectHigh)) {
+		  DrawButton(0,uiButtonCounter * RectHigh , RectWidth, RectHigh, LCD_COLOR_BLUE, LCD_COLOR_GREEN,uiButtonCounter);
+	}
+}
+
+
+void  LedLcd::On(unsigned int uiLedCtr){
+		if (uiLedCtr==uiCurrOn){
+			return;
+		}
+		else if (uiCurrOn!=NONE){
+			DrawButton(0, uiCurrOn * RectHigh, RectWidth, RectHigh, LCD_COLOR_BLUE, LCD_COLOR_GREEN, uiCurrOn);
+		}
+		if (uiLedCtr!=NONE){
+			DrawButton(0, uiLedCtr * RectHigh, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN, uiLedCtr);
+		}
+		uiCurrOn = uiLedCtr;
+}
+

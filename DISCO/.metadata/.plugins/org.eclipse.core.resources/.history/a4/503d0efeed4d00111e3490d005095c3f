@@ -1,0 +1,47 @@
+#include "ledlcd.h"
+#include "KeyboardTs.h"
+
+LedLcd::LedLcd(){
+	unsigned int uiLCDHeight = BSP_LCD_GetYSize();
+	unsigned int uiCurrentRectPosY =0;
+	for (uiCurrentRectPosY=  0; uiCurrentRectPosY < uiLCDHeight; uiCurrentRectPosY = uiCurrentRectPosY + RectHigh) {
+		  DrawButton(0,uiCurrentRectPosY , RectWidth, RectHigh, LCD_COLOR_BLUE, LCD_COLOR_GREEN,0);
+	}
+}
+
+
+void  LedLcd::On(unsigned int uiLedCtr){
+		if (uiLedCtr==uiLastOn){
+			return;
+		}
+		else if (uiLastOn<4){
+			DrawButton(0, uiLastOn * RectHigh, RectWidth, RectHigh, LCD_COLOR_BLUE, LCD_COLOR_GREEN, eCurrent_Button);
+		}
+		if (uiLedCtr<4){
+			DrawButton(0, uiLedCtr * RectHigh, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN, eCurrent_Button);
+		}
+		uiCurrOn = uiLedCtr;
+}
+
+
+int main(){
+	LCDInit();
+	ButtonInit();
+
+	ButtonState eCurrent_Button = NONE;
+	ButtonState eLast_Button = NONE;
+    while (true){
+    	eCurrent_Button=eRead();
+    	if (eCurrent_Button!=eLast_Button){
+    		if(eLast_Button != NONE){
+    		DrawButton(0, eLast_Button * RectHigh, RectWidth, RectHigh, LCD_COLOR_BLUE, LCD_COLOR_GREEN,eLast_Button);
+    	}
+
+    		if(eCurrent_Button != NONE ){
+    		DrawButton(0, eCurrent_Button * RectHigh, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN, eCurrent_Button);
+    	}
+    	eLast_Button=eCurrent_Button;
+    }
+    	HAL_Delay(100);
+   }
+}

@@ -1,0 +1,31 @@
+#include "KeyboardTs.h"
+#include <stm32f4xx_hal.h>
+
+int main(){
+	LCDInit();
+	ButtonInit();
+
+	ButtonState eCurrent_Button = NONE;
+	ButtonState eLast_Button = NONE;
+    while (true){
+    	eCurrent_Button=eRead();
+    	if (eCurrent_Button!=eLast_Button){
+
+    		switch
+    		if(eLast_Button != NONE){
+    		DrawButton(0, eLast_Button * RectHigh, RectWidth, RectHigh, LCD_COLOR_BLUE, LCD_COLOR_GREEN,eLast_Button);
+    	}
+
+    		if(eCurrent_Button != NONE ){
+    		DrawButton(0, eCurrent_Button * RectHigh, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN, eCurrent_Button);
+    	}
+    	eLast_Button=eCurrent_Button;
+    }
+    	HAL_Delay(100);
+   }
+}
+
+
+
+
+

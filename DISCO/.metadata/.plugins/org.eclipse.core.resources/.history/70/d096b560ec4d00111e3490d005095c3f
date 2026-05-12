@@ -1,0 +1,13 @@
+#include "ledlcd.h"
+#include "KeyboardTs.h"
+
+LedLcd::LedLcd(){
+
+
+}
+
+void  Led::On(unsigned int uiLedCtr){
+		Led
+		DrawButton(0, uiLedCtr * RectHigh, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN, eCurrent_Button);
+
+}

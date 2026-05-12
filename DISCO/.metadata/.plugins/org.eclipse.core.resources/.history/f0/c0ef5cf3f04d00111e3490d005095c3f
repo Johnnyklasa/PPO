@@ -1,0 +1,11 @@
+#pragma once
+
+class LedLcd{
+	public:
+	LedLcd();
+	void On(unsigned int uiLedCtr);
+	private:
+	unsigned int uiCurrOn;
+	void DrawButton(uint16_t Xpos, uint16_t Ypos, uint16_t Width, uint16_t Height, uint32_t FillColor, uint32_t BorderColor, uint8_t number);
+};
+

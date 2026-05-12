@@ -1,0 +1,8 @@
+#pragma once
+
+class Led{
+	public:
+	void On(unsigned int uiLedCtr);
+	private:
+	unsigned int curr_on;
+};

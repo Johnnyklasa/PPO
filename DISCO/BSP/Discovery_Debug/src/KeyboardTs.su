@@ -1,4 +1,2 @@
-../src/KeyboardTs.cpp:8:6:void DrawButton(uint16_t, uint16_t, uint16_t, uint16_t, uint32_t, uint32_t, uint8_t)	32	static
-../src/KeyboardTs.cpp:27:6:void ButtonInit()	32	static
-../src/KeyboardTs.cpp:34:6:void LCDInit()	16	static
-../src/KeyboardTs.cpp:43:18:ButtonState eRead()	24	static
+../src/KeyboardTs.cpp:7:1:KeyboardTs::KeyboardTs(unsigned int)	24	static
+../src/KeyboardTs.cpp:14:13:ButtonState KeyboardTs::eRead()	32	static
