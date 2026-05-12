@@ -1,0 +1,90 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+#include <stm32f429i_discovery_ts.h>
+
+#define RectWidth 80
+#define RectHigh 80
+#define FirstRectPos 0
+#define SecondRectPos 80
+#define ThirdRectPos 160
+
+
+#define RectX 80
+
+
+void DrawFilledRectWithBorder(uint16_t Xpos, uint16_t Ypos, uint16_t Width, uint16_t Height, uint32_t FillColor, uint32_t BorderColor)
+{
+  BSP_LCD_SetTextColor(FillColor);
+  BSP_LCD_FillRect(Xpos, Ypos, Width, Height);
+  BSP_LCD_SetTextColor(BorderColor);
+  BSP_LCD_DrawRect(Xpos, Ypos, Width, Height);
+}
+
+
+int main(){
+	TS_StateTypeDef sDetector;
+	unsigned int uiWidth {BSP_LCD_GetXSize()};
+	unsigned int uiHeight {BSP_LCD_GetYSize()};
+	unsigned int uiRect{};
+	BSP_LCD_Init();
+	BSP_TS_Init(uiWidth, uiHeight);
+
+
+	while (true){
+		BSP_TS_GetState(&sDetector);
+		for (int i=0;i<=uiHeight;i=i+80){
+			 DrawFilledRectWithBorder(0, i,RectWidth , RectHigh, LCD_COLOR_BLUE , LCD_COLOR_GREEN);
+		}
+
+
+		if (sDetector.X<=RectX){
+			uiRect=(sDetector.Y/80);
+			switch (uiRect){
+			case 1:
+				 DrawFilledRectWithBorder(0,FirstRectPos,RectWidth , RectHigh, LCD_COLOR_GREEN , LCD_COLOR_GREEN);
+
+			}
+			case 2:
+				 DrawFilledRectWithBorder(0,SecondRectPos,RectWidth , RectHigh, LCD_COLOR_GREEN , LCD_COLOR_GREEN);
+			}
+
+
+		}
+		Hal_Delay(100);
+	}
+
+
+}
+
+
+
+
+
+
+int main()
+{
+	TS_StateTypeDef sDetector;
+	char cText[30];
+	BSP_LCD_Init();
+
+	unsigned int uiWidth {BSP_LCD_GetXSize()};
+	unsigned int uiHeight {BSP_LCD_GetYSize()};
+
+	BSP_TS_Init(uiWidth, uiHeight);
+
+	float fXPercent;
+	float fYPercent;
+
+	BSP_LCD_SetBackColor(LCD_COLOR_DARKBLUE);
+	BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+
+	while (true) {
+		BSP_TS_GetState(&sDetector);
+		fXPercent = ((float)sDetector.X / 240.0f) * 100.0f;
+		fYPercent = ((float)sDetector.Y / 320.0f) * 100.0f;
+		sprintf(cText, (sDetector.TouchDetected > 0) ? "X=%.1f; Y=%.1f" : "*************** ", fXPercent , fYPercent);
+		BSP_LCD_DisplayStringAtLine(LINE_NUMBER,reinterpret_cast<uint8_t*>(cText));
+	}
+
+}

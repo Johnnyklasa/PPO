@@ -1,0 +1,39 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+#include <stm32f429i_discovery_ts.h>
+#include <cstdio>
+#include <string>
+#include <format>
+
+#define LINE_NUMBER 1
+
+
+
+
+int main(void)
+{
+	TS_StateTypeDef sDetector;
+	char cText[30];
+	BSP_LCD_Init();
+
+	unsigned int uiWidth {BSP_LCD_GetXSize()};
+	unsigned float uiHeight {BSP_LCD_GetYSize()};
+
+	BSP_TS_Init(uiWidth, uiHeight);
+
+	float fXPercent;
+	float fYPercent;
+
+	BSP_LCD_SetBackColor(LCD_COLOR_DARKBLUE);
+	BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+
+	while (true) {
+		BSP_TS_GetState(&sDetector);
+		fXPercent = ((float)uiXSize / 240.0f) * 100.0f;
+		fYPercent = ((float)uiYSize / 320.0f) * 100.0f;
+		sprintf(cText, (sDetector.TouchDetected > 0) ? "X=%u; Y=%u" : "*************** ", fXPercent , fYPercent);
+		BSP_LCD_DisplayStringAtLine(LINE_NUMBER,reinterpret_cast<uint8_t*>(cText));
+	}
+
+}

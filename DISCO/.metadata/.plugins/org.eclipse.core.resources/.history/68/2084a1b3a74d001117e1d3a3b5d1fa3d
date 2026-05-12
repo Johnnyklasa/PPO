@@ -1,0 +1,13 @@
+#pragma once
+
+#define RectWidth 80
+#define RectHigh 80
+#define Number0 48
+
+enum ButtonState {
+	NONE = -1,
+	BUTTON0 = 0,
+	BUTTON1 = 1,
+	BUTTON2 = 2,
+	BUTTON3 = 3};
+

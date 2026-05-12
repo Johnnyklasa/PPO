@@ -1,41 +1,30 @@
+#include "KeyboardTs.h"
 #include <stm32f4xx_hal.h>
-#include <stm32f429i_discovery.h>
-#include <stm32f429i_discovery_lcd.h>
-#include <stm32f429i_discovery_ts.h>
-#include <cstdio>
-#include <string>
-#include <format>
 
-#define LINE_NUMBER 1
+int main(){
+	LCDInit();
+	ButtonInit();
+
+	ButtonState eCurrent_Button = NONE;
+	ButtonState eLast_Button = NONE;
+    while (true){
+    	eCurrent_Button=eRead();
+    	if (eCurrent_Button!=eLast_Button){
+    		if(eLast_Button != NONE){
+    		DrawButton(0, eLast_Button * RectHigh, RectWidth, RectHigh, LCD_COLOR_BLUE, LCD_COLOR_GREEN,eLast_Button);
+    	}
+    		if(eCurrent_Button != NONE ){
+    		DrawButton(0, eCurrent_Button * RectHigh, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN, eCurrent_Button);
+    	}
+    	eLast_Button=eCurrent_Button;
 
 
-
-
-int main(void)
-{
-	TS_StateTypeDef sDetector;
-	std::string sText;
-
-
-	BSP_LCD_Init();
-
-	unsigned int uiWidth {BSP_LCD_GetXSize()};
-	unsigned int uiHeight {BSP_LCD_GetYSize()};
-
-	BSP_TS_Init(uiWidth, uiHeight);
-
-	BSP_LCD_SetBackColor(LCD_COLOR_DARKBLUE);
-	BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
-
-	while (true) {
-		BSP_TS_GetState(&sDetector);
-		if (sDetector.TouchDetected ==1){
-			sText="***************";
-		}
-		else {
-			sText = "X=" + std::to_string(uiWidth) + "; Y=" + std::to_string(uiHeight);
-		}
-		BSP_LCD_DisplayStringAtLine(LINE_NUMBER,reinterpret_cast<uint8_t*>(const_cast<char*>(sText.c_str())));
-	}
-
+    }
+    	HAL_Delay(100);
+   }
 }
+
+
+
+
+

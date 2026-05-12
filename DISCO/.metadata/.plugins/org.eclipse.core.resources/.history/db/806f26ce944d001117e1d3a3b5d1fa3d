@@ -1,0 +1,68 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+#include <stm32f429i_discovery_ts.h>
+
+#define RectWidth 80
+#define RectHigh 80
+
+#define SecondRectY 160
+#define RectX 80
+
+
+
+int main(){
+	TS_StateTypeDef sDetector;
+	unsigned int uiWidth {BSP_LCD_GetXSize()};
+	unsigned int uiHeight {BSP_LCD_GetYSize()};
+
+	BSP_LCD_Init();
+	BSP_TS_Init(uiWidth, uiHeight);
+
+
+	while (true){
+		BSP_TS_GetState(&sDetector);
+		BSP_LCD_DrawRect(0, 0,  RectWidth, RectHigh);
+		BSP_LCD_DrawRect(0, SecondREctY,  RectWidth, RectHigh);
+		if (sDetector.X<=RectX){
+			if (sDetectorY<=FirstRectY){
+
+			}
+		}
+		Hal_Delay(100);
+	}
+
+
+}
+
+
+
+
+
+
+int main()
+{
+	TS_StateTypeDef sDetector;
+	char cText[30];
+	BSP_LCD_Init();
+
+	unsigned int uiWidth {BSP_LCD_GetXSize()};
+	unsigned int uiHeight {BSP_LCD_GetYSize()};
+
+	BSP_TS_Init(uiWidth, uiHeight);
+
+	float fXPercent;
+	float fYPercent;
+
+	BSP_LCD_SetBackColor(LCD_COLOR_DARKBLUE);
+	BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+
+	while (true) {
+		BSP_TS_GetState(&sDetector);
+		fXPercent = ((float)sDetector.X / 240.0f) * 100.0f;
+		fYPercent = ((float)sDetector.Y / 320.0f) * 100.0f;
+		sprintf(cText, (sDetector.TouchDetected > 0) ? "X=%.1f; Y=%.1f" : "*************** ", fXPercent , fYPercent);
+		BSP_LCD_DisplayStringAtLine(LINE_NUMBER,reinterpret_cast<uint8_t*>(cText));
+	}
+
+}

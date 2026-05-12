@@ -4,24 +4,33 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+../src/KeyboardTs.cpp 
+
 CXX_SRCS += \
 ../src/main.cxx 
 
 OBJS += \
+./src/KeyboardTs.o \
 ./src/main.o 
 
 CXX_DEPS += \
 ./src/main.d 
 
+CPP_DEPS += \
+./src/KeyboardTs.d 
+
 
 # Each subdirectory must supply rules for building sources it contributes
+src/%.o src/%.su src/%.cyclo: ../src/%.cpp src/subdir.mk
+	arm-none-eabi-g++ "$<" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_STM32F429I_DISCO -DSTM32F429xx -c -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/CMSIS/Include" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/BSP/STM32F429I-Discovery" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/User" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 src/%.o src/%.su src/%.cyclo: ../src/%.cxx src/subdir.mk
 	arm-none-eabi-g++ "$<" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_STM32F429I_DISCO -DSTM32F429xx -c -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/CMSIS/Include" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/BSP/STM32F429I-Discovery" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/User" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
 clean: clean-src
 
 clean-src:
-	-$(RM) ./src/main.cyclo ./src/main.d ./src/main.o ./src/main.su
+	-$(RM) ./src/KeyboardTs.cyclo ./src/KeyboardTs.d ./src/KeyboardTs.o ./src/KeyboardTs.su ./src/main.cyclo ./src/main.d ./src/main.o ./src/main.su
 
 .PHONY: clean-src
 

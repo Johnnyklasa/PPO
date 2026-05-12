@@ -1,7 +1,8 @@
-16:42:32 **** Incremental Build of configuration Discovery_Debug for project BSP ****
+04:25:08 **** Incremental Build of configuration Discovery_Debug for project BSP ****
 make -j12 all 
+arm-none-eabi-g++ "../src/KeyboardTs.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_STM32F429I_DISCO -DSTM32F429xx -c -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/CMSIS/Include" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/BSP/STM32F429I-Discovery" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/User" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"src/KeyboardTs.d" -MT"src/KeyboardTs.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/KeyboardTs.o"
 arm-none-eabi-g++ "../src/main.cxx" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_STM32F429I_DISCO -DSTM32F429xx -c -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/CMSIS/Include" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/BSP/STM32F429I-Discovery" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/User" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"src/main.d" -MT"src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/main.o"
-arm-none-eabi-g++ -o "BSP.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Jasiek\Documents\PPO\PPO\DISCO\BSP\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BSP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+arm-none-eabi-g++ -o "BSP.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Jasiek\Documents\PPO\PPO\DISCO\BSP\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BSP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740/tools/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: BSP.elf has a LOAD segment with RWX permissions
 Finished building target: BSP.elf
  
@@ -9,7 +10,7 @@ arm-none-eabi-size  BSP.elf
 arm-none-eabi-objdump -h -S BSP.elf  > "BSP.list"
 arm-none-eabi-objcopy  -O binary BSP.elf  "BSP.bin"
    text	   data	    bss	    dec	    hex	filename
-  39348	    236	   2604	  42188	   a4cc	BSP.elf
+  50260	    612	   2604	  53476	   d0e4	BSP.elf
 Finished building: default.size.stdout
  
 Finished building: BSP.bin

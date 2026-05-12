@@ -1,0 +1,96 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+#include <stm32f429i_discovery_ts.h>
+
+#define RectWidth 80
+#define RectHigh 80
+
+#define FirstRectPos 0
+#define SecondRectPos 80
+#define ThirdRectPos 160
+#define FourthRectPos 240
+
+
+
+
+
+void DrawFilledRectWithBorder(uint16_t Xpos, uint16_t Ypos, uint16_t Width, uint16_t Height, uint32_t FillColor, uint32_t BorderColor)
+{
+  BSP_LCD_SetTextColor(FillColor);
+  BSP_LCD_FillRect(Xpos, Ypos, Width, Height);
+  BSP_LCD_SetTextColor(BorderColor);
+  BSP_LCD_DrawRect(Xpos, Ypos, Width, Height);
+}
+
+enum ButtonState {NONE,BUTTON0,BUTTON1,BUTTON2,BUTTON3};
+
+void Init(){
+    TS_StateTypeDef sDetector;
+    unsigned int uiWidth = BSP_LCD_GetXSize();
+    unsigned int uiHeight = BSP_LCD_GetYSize();
+    unsigned int uiRect = 0;
+    unsigned int uiCurrentRectPosY =0;
+
+    BSP_LCD_Init();
+    BSP_TS_Init(uiWidth, uiHeight);
+
+    for (uiCurrentRectPosY=  0; uiCurrentRectPosY < uiHeight; uiCurrentRectPosY = uiCurrentRectPosY + RectHigh) {
+               DrawFilledRectWithBorder(0, i, RectWidth, RectHigh, LCD_COLOR_BLUE, LCD_COLOR_GREEN);
+     }
+
+
+
+}
+
+enum ButtonState eRead();
+
+
+
+int main(){
+
+    while (true){
+
+
+        BSP_TS_GetState(&sDetector);
+        if ((sDetector.TouchDetected > 0 ) && (sDetector.X <= RectWidth)) {
+        		ButtonState eCurrButtonState = static_cast<ButtonState>(sDetector.Y/80);
+        		if (eCurrButtonState != lastPressedRect) {
+        		    if (lastPressedRect != RECT_NONE) {
+        		          DrawFilledRectWithBorder(0, lastPressedRect * 80, RectWidth, RectHigh, LCD_COLOR_BLUE, LCD_COLOR_GREEN);
+        		         }
+        		                    DrawFilledRectWithBorder(0, currentRect * 80, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN);
+
+        		                    lastPressedRect = currentRect;
+        		                }
+
+
+
+                switch (uiRect) {
+                    case 0:
+                        DrawFilledRectWithBorder(0, FirstRectPos, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN);
+                        break;
+
+                    case 1:
+                    	DrawFilledRectWithBorder(0, SecondRectPos, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN);
+                        break;
+
+                    case 2:
+                        DrawFilledRectWithBorder(0, ThirdRectPos, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN);
+                        break;
+
+                    case 3:
+                        DrawFilledRectWithBorder(0, FourthRectPos, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN);
+                        break;
+                }
+            }
+        }
+
+        HAL_Delay(100);
+    }
+
+
+
+
+
+
