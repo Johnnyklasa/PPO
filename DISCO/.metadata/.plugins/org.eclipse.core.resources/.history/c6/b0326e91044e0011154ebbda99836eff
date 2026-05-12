@@ -1,0 +1,10 @@
+#include "KeyboardTsLcd.h"
+
+
+
+KeyboardTsLcd::KeyboardTsLcd(unsigned int ucColumn) {
+	pKeyboard = new KeyboardTs(ucColumn);
+	pLed = new LedLcd(ucColumn);
+}
+
+ButtonState KeyboardTsLcd::e

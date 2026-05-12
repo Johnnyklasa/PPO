@@ -86,5 +86,6 @@
 "./Drivers/User/system_stm32f4xx.o"
 "./Drivers/init.o"
 "./src/KeyboardTs.o"
+"./src/KeyboardTsLcd.o"
 "./src/ledlcd.o"
 "./src/main.o"

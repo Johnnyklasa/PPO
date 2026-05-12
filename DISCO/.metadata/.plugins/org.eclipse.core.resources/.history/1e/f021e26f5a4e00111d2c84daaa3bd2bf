@@ -1,0 +1,19 @@
+#include "KeyboardTsLcd.h"
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+#include <stm32f429i_discovery_ts.h>
+
+
+KeyboardTsLcd::KeyboardTsLcd(unsigned int ucColumn) {
+	pKeyboard = new KeyboardTs(ucColumn);
+	pLed = new LedLcd(ucColumn);
+}
+
+
+ButtonState KeyboardTsLcd::eRead(){
+     unsigned char ucState = pKeyboard->eRead();
+     pLed->On(ucState);
+     return ucState;
+
+}
+

@@ -6,6 +6,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/KeyboardTs.cpp \
+../src/KeyboardTsLcd.cpp \
 ../src/ledlcd.cpp 
 
 CXX_SRCS += \
@@ -13,6 +14,7 @@ CXX_SRCS += \
 
 OBJS += \
 ./src/KeyboardTs.o \
+./src/KeyboardTsLcd.o \
 ./src/ledlcd.o \
 ./src/main.o 
 
@@ -21,6 +23,7 @@ CXX_DEPS += \
 
 CPP_DEPS += \
 ./src/KeyboardTs.d \
+./src/KeyboardTsLcd.d \
 ./src/ledlcd.d 
 
 
@@ -33,7 +36,7 @@ src/%.o src/%.su src/%.cyclo: ../src/%.cxx src/subdir.mk
 clean: clean-src
 
 clean-src:
-	-$(RM) ./src/KeyboardTs.cyclo ./src/KeyboardTs.d ./src/KeyboardTs.o ./src/KeyboardTs.su ./src/ledlcd.cyclo ./src/ledlcd.d ./src/ledlcd.o ./src/ledlcd.su ./src/main.cyclo ./src/main.d ./src/main.o ./src/main.su
+	-$(RM) ./src/KeyboardTs.cyclo ./src/KeyboardTs.d ./src/KeyboardTs.o ./src/KeyboardTs.su ./src/KeyboardTsLcd.cyclo ./src/KeyboardTsLcd.d ./src/KeyboardTsLcd.o ./src/KeyboardTsLcd.su ./src/ledlcd.cyclo ./src/ledlcd.d ./src/ledlcd.o ./src/ledlcd.su ./src/main.cyclo ./src/main.d ./src/main.o ./src/main.su
 
 .PHONY: clean-src
 
