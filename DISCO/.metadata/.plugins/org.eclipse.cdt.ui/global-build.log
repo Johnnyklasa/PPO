@@ -1,4 +1,4 @@
-01:47:01 **** Incremental Build of configuration Discovery_Debug for project BSP ****
+15:10:21 **** Incremental Build of configuration Discovery_Debug for project BSP ****
 make -j12 all 
 arm-none-eabi-g++ "../src/KeyboardTs.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_STM32F429I_DISCO -DSTM32F429xx -c -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/CMSIS/Include" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/BSP/STM32F429I-Discovery" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers/User" -I"C:/Users/Jasiek/Documents/PPO/PPO/DISCO/BSP/Drivers" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"src/KeyboardTs.d" -MT"src/KeyboardTs.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "src/KeyboardTs.o"
 arm-none-eabi-g++ -o "BSP.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Jasiek\Documents\PPO\PPO\DISCO\BSP\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BSP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
@@ -9,7 +9,7 @@ arm-none-eabi-size  BSP.elf
 arm-none-eabi-objdump -h -S BSP.elf  > "BSP.list"
 arm-none-eabi-objcopy  -O binary BSP.elf  "BSP.bin"
    text	   data	    bss	    dec	    hex	filename
-  50580	    612	   2612	  53804	   d22c	BSP.elf
+  50532	    612	   2612	  53756	   d1fc	BSP.elf
 Finished building: default.size.stdout
  
 Finished building: BSP.bin

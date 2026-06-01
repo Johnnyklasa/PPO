@@ -1,5 +1,0 @@
-#pragma once
-
-#define RectWidth 80
-#define RectHigh 80
-#define Number0 48

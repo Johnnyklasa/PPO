@@ -1,2 +1,2 @@
 ../src/KeyboardTs.cpp:7:1:KeyboardTs::KeyboardTs(unsigned int)	1
-../src/KeyboardTs.cpp:13:13:ButtonState KeyboardTs::eRead()	4
+../src/KeyboardTs.cpp:20:13:ButtonState KeyboardTs::eRead()	4

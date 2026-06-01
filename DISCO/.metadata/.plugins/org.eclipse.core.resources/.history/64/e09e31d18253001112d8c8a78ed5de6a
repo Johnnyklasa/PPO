@@ -1,0 +1,35 @@
+#include <stm32f4xx_hal.h>
+#include <stm32f429i_discovery.h>
+#include <stm32f429i_discovery_lcd.h>
+#include <stm32f429i_discovery_ts.h>
+#include "KeyboardTs.h"
+
+KeyboardTs::KeyboardTs(unsigned int uiKeyboardPos) :  uiButtonColumn(uiKeyboardPos){
+    unsigned int uiLCDWidth = BSP_LCD_GetXSize();
+    unsigned int uiLCDHeight = BSP_LCD_GetYSize();
+    BSP_TS_Init(uiLCDWidth, uiLCDHeight);
+}
+
+static const ButtonState ButtonLUT[4] = {
+        BUTTON_0,
+        BUTTON_1,
+        BUTTON_2,
+        BUTTON_3
+    };
+
+ButtonState KeyboardTs::eRead(){
+     TS_StateTypeDef sDetector;
+	 BSP_TS_GetState(&sDetector);
+	 if (sDetector.TouchDetected > 0 ) {
+	 if ((sDetector.X >= RectWidth *  uiButtonColumn)&&
+	 (sDetector.X <= RectWidth * (  uiButtonColumn +1))) {
+		 unsigned int uiYindex = sDetector.Y/RectHigh;
+		 //ButtonState eCurrButtonState = static_cast<ButtonState>(sDetector.Y/RectHigh);
+		 return ButtonLut[uiYindex];
+	 }
+	 }
+	return NONE;
+
+}
+
+

@@ -1,0 +1,16 @@
+#include "KeyboardTsLcd.h"
+
+
+
+KeyboardTsLcd::KeyboardTsLcd(unsigned char ucColumn) {
+	pKeyboard = new KeyboardTs(ucColumn);
+	pLed = new LedLcd(ucColumn);
+}
+
+
+ButtonState KeyboardTsLcd::eRead(){
+     ButtonState eState = pKeyboard->eRead();
+     pLed->On(eState);
+     return eState;
+}
+

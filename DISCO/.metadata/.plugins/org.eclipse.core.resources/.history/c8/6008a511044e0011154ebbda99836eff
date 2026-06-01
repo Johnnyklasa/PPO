@@ -1,8 +1,0 @@
-#include "KeyboardTsLcd.h"
-
-
-
-KeyboardTsLcd::KeyboardTsLcd(unsigned int uiColumn) {
-	pKeyboard = new KeyboardTs(uiColumn);
-	pLed = new LedLcd(uiColumn);
-}

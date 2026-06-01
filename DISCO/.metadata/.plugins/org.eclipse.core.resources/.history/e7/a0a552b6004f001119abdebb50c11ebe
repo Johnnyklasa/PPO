@@ -1,0 +1,20 @@
+#include <stm32f4xx_hal.h>
+#include "KeyboardTsLcd.h"
+
+int main()
+{
+
+	KeyboardTsLcd Keyboard(0);
+	LedLcd Led(2);
+	while(true) {
+		ButtonState eState = Keyboard.eRead();
+		if (eState!=NONE){
+		Led.On(3-eState);
+		}
+
+		}
+		HAL_Delay(100);
+	}
+}
+
+

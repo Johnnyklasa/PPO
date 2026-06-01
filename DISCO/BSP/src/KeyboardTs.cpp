@@ -10,15 +10,28 @@ KeyboardTs::KeyboardTs(unsigned int uiKeyboardPos) :  uiButtonColumn(uiKeyboardP
     BSP_TS_Init(uiLCDWidth, uiLCDHeight);
 }
 
+static const ButtonState ButtonLookUp[] = {
+        BUTTON_0,
+        BUTTON_1,
+        BUTTON_2,
+        BUTTON_3
+    };
+
 ButtonState KeyboardTs::eRead(){
      TS_StateTypeDef sDetector;
 	 BSP_TS_GetState(&sDetector);
-	 if ((sDetector.TouchDetected > 0 ) && (sDetector.X >= RectWidth *  uiButtonColumn) && (sDetector.X <= RectWidth * (  uiButtonColumn +1))) {
-		 ButtonState eCurrButtonState = static_cast<ButtonState>(sDetector.Y/RectHigh);
-		 return eCurrButtonState;
+	 if (sDetector.TouchDetected == 0 ) {
+		 return NONE;
 	 }
-	return NONE;
-
+	 if ((sDetector.X <= RectWidth *  uiButtonColumn)||
+	 (sDetector.X >= RectWidth * (  uiButtonColumn +1))) {
+		 return NONE;
+	 }
+	 unsigned int uiYindex = sDetector.Y/RectHigh;
+	 return ButtonLookUp[uiYindex];
+		 //ButtonState eCurrButtonState = static_cast<ButtonState>(sDetector.Y/RectHigh);
 }
+
+
 
 

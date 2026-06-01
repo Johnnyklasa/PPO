@@ -7,6 +7,6 @@ class LedLcd{
 	private:
 	unsigned int uiCurrOn;
 	unsigned int uiLedPos;
-	void DrawButton(uint16_t Xpos, uint16_t Ypos, uint16_t Width, uint16_t Height, uint32_t FillColor, uint32_t BorderColor, uint8_t number);
+	void DrawButton(uint32_t FillColor, uint8_t number);
 };
 

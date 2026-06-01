@@ -1,9 +1,10 @@
 #pragma once
 #include <stdint.h>
 #include <stm32f429i_discovery_lcd.h>
-#define RectWidth 80
-#define RectHigh 80
-#define Number0 48
+
+constexpr unsigned int RectWidth = 80;
+constexpr unsigned int RectHigh = 80;
+constexpr unsigned int  Number0 = 48;
 
 enum ButtonState {
 	BUTTON_0 = 0,

@@ -1,0 +1,35 @@
+Dependencies for Project 'servo', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x6A1DD0CB)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\keyboard.cpp)(0x6A1DEE20)()
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\keyboard.h)(0x6A1DD0CA)
+F (.\main.cpp)(0x6A1DEE37)()
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\keyboard.h)(0x6A1DD0CA)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\servo.h)(0x6A1DD0CA)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\uart.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\strings.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\decoder.h)(0x6A1DD0CA)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\watch.h)(0x6A1DD0CB)
+F (.\led.cpp)(0x6A1DF02B)()
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\led.h)(0x6A1DD0CA)
+F (.\servo.cpp)(0x6A1DF031)()
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\led.h)(0x6A1DD0CA)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\timer_interrupts.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\servo.h)(0x6A1DD0CA)
+F (.\watch.cpp)(0x6A1DEF27)()
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\timer_interrupts.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\watch.h)(0x6A1DD0CB)
+F (.\uart.cpp)(0x6A1DEF50)()
+I (C:\Keil\ARM\Inc\Philips\LPC210X.H)(0x51C81BAC)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\strings.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\uart.h)(0x6A1DD0CB)
+F (.\decoder.cpp)(0x6A1DF037)()
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\strings.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\decoder.h)(0x6A1DD0CA)
+F (.\strings.cpp)(0x6A1DEFD9)()
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\strings.h)(0x6A1DD0CB)
+F (.\timer_interrupts.cpp)(0x6A1DF021)()
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_2\timer_interrupts.h)(0x6A1DD0CB)

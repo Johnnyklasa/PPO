@@ -8,15 +8,18 @@ LedLcd::LedLcd(unsigned int uiLedColumn) : uiLedPos(uiLedColumn){
 	unsigned int uiLCDHeight = BSP_LCD_GetYSize();
 	unsigned int uiButtonCounter= 0;
 	for (uiButtonCounter = 0; uiButtonCounter * RectHigh< uiLCDHeight; uiButtonCounter++) {
-		  DrawButton(uiLedPos*RectWidth,uiButtonCounter * RectHigh , RectWidth, RectHigh, LCD_COLOR_BLUE, LCD_COLOR_GREEN,uiButtonCounter);
+		  DrawButton(LCD_COLOR_BLUE,uiButtonCounter);
 	}
 }
 
-void LedLcd::DrawButton(uint16_t Xpos, uint16_t Ypos, uint16_t Width, uint16_t Height, uint32_t FillColor, uint32_t BorderColor, uint8_t number){
+void LedLcd::DrawButton(uint32_t FillColor, uint8_t number){
+
+	unsigned int Xpos = uiLedPos * RectWidth;
+	unsigned int Ypos = number * RectHigh;
 	BSP_LCD_SetTextColor(FillColor);
-	BSP_LCD_FillRect(Xpos, Ypos, Width, Height);
-	BSP_LCD_SetTextColor(BorderColor);
-	BSP_LCD_DrawRect(Xpos, Ypos, Width, Height);
+	BSP_LCD_FillRect(Xpos, Ypos, RectWidth ,RectHigh);
+	BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
+	BSP_LCD_DrawRect(Xpos, Ypos,RectWidth,RectHigh);
 	BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
 	BSP_LCD_SetBackColor(LCD_COLOR_RED);
 
@@ -30,11 +33,11 @@ void LedLcd::On(unsigned int uiLedCtr){
 		if (uiLedCtr==uiCurrOn){
 			return;
 		}
-		else if (uiCurrOn!=NONE){
-			DrawButton(uiLedPos*RectWidth, uiCurrOn * RectHigh, RectWidth, RectHigh, LCD_COLOR_BLUE, LCD_COLOR_GREEN, uiCurrOn); //sciagamy palucha
+		if (uiCurrOn!=NONE){
+			DrawButton(LCD_COLOR_BLUE, uiCurrOn); //sciagamy palucha
 		}
 		if (uiLedCtr!=NONE){
-			DrawButton(uiLedPos*RectWidth, uiLedCtr * RectHigh, RectWidth, RectHigh, LCD_COLOR_GREEN, LCD_COLOR_GREEN, uiLedCtr); //kladziemy palucha
+			DrawButton(LCD_COLOR_GREEN, uiLedCtr); //kladziemy palucha
 		}
 		uiCurrOn = uiLedCtr;
 }
