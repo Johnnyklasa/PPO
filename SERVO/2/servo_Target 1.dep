@@ -1,36 +1,36 @@
 Dependencies for Project 'servo', Target 'Target 1': (DO NOT MODIFY !)
 F (.\Startup.s)(0x6A1ECC72)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
 F (.\decoder.cpp)(0x6A1EC26F)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\decoder.o --omf_browse .\decoder.crf --depend .\decoder.d)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\strings.h)(0x6A1DD0CB)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\decoder.h)(0x6A1EC262)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\strings.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\decoder.h)(0x6A1EC262)
 F (.\keyboard.cpp)(0x6A1DEE20)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\keyboard.o --omf_browse .\keyboard.crf --depend .\keyboard.d)
 I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\keyboard.h)(0x6A1DD0CA)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\keyboard.h)(0x6A1DD0CA)
 F (.\led.cpp)(0x6A1DF02B)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\led.o --omf_browse .\led.crf --depend .\led.d)
 I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\led.h)(0x6A1DD0CA)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\led.h)(0x6A1DD0CA)
 F (.\main.cpp)(0x6A1ECB1D)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\keyboard.h)(0x6A1DD0CA)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\servo.h)(0x6A1E0AD6)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\uart.h)(0x6A1DD0CB)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\strings.h)(0x6A1DD0CB)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\decoder.h)(0x6A1EC262)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\watch.h)(0x6A1E04B1)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\timer_interrupts.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\keyboard.h)(0x6A1DD0CA)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\servo.h)(0x6A1E0AD6)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\uart.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\strings.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\decoder.h)(0x6A1EC262)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\watch.h)(0x6A1E04B1)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\timer_interrupts.h)(0x6A1DD0CB)
 F (.\servo.cpp)(0x6A1E0AF7)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\servo.o --omf_browse .\servo.crf --depend .\servo.d)
 I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\led.h)(0x6A1DD0CA)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\timer_interrupts.h)(0x6A1DD0CB)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\servo.h)(0x6A1E0AD6)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\led.h)(0x6A1DD0CA)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\timer_interrupts.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\servo.h)(0x6A1E0AD6)
 F (.\strings.cpp)(0x6A1DEFD9)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\strings.o --omf_browse .\strings.crf --depend .\strings.d)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\strings.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\strings.h)(0x6A1DD0CB)
 F (.\timer_interrupts.cpp)(0x6A1DF021)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\timer_interrupts.o --omf_browse .\timer_interrupts.crf --depend .\timer_interrupts.d)
 I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C81BAC)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\timer_interrupts.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\timer_interrupts.h)(0x6A1DD0CB)
 F (.\uart.cpp)(0x6A1DEF50)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
 I (C:\Keil\ARM\Inc\Philips\LPC210X.H)(0x51C81BAC)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\strings.h)(0x6A1DD0CB)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\uart.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\strings.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\uart.h)(0x6A1DD0CB)
 F (.\watch.cpp)(0x6A1DFD9B)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\watch.o --omf_browse .\watch.crf --depend .\watch.d)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\timer_interrupts.h)(0x6A1DD0CB)
-I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\1_5\watch.h)(0x6A1E04B1)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\timer_interrupts.h)(0x6A1DD0CB)
+I (C:\Users\Jasiek\Documents\PPO\PPO\SERVO\2\watch.h)(0x6A1E04B1)
