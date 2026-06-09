@@ -12,6 +12,6 @@ class LedBoard
 		void Off();
 		void On(unsigned char ucLed);
 	private:
-		std::vector<Led*> Leds;
+		std::vector<Led> Leds = {};
 
 };

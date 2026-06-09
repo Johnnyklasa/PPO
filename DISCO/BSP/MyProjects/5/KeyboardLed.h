@@ -1,0 +1,13 @@
+#pragma once
+#include "Keyboard.h"
+#include "LedBoard.h"
+
+class KeyboardLed {
+public:
+    KeyboardLed(unsigned char ucColumn);
+    ButtonState eRead();
+private:
+    Keyboard* pKeyboard;
+    LedBoard* pLed;
+    ButtonState ePreviousState;
+};

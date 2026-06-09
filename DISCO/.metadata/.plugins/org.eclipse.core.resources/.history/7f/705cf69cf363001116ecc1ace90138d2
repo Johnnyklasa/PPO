@@ -7,7 +7,7 @@ LedBoard::LedBoard (unsigned char ucColumn){
 	BSP_LCD_Init();
 	BSP_LCD_SetFont(&Font24);
 	for (unsigned char ucLedCounter=0; ucLedCounter<LedNumber; ucLedCounter++){
-		Leds.push_back(new Led(ucColumn, ucLedCounter));
+		Leds[ucLedCounter] = new Led(ucColumn,ucLedCounter);
 	}
 }
 
@@ -23,8 +23,8 @@ void LedBoard::On(unsigned char ucLed){
 
 
 void LedBoard::Off(){
-	for (std::vector<Led*>::iterator it = Leds.begin(); it != Leds.end(); ++it) {
-	        (*it)->Off();
-	    }
+	for (unsigned char ucLedCounter=0; ucLedCounter<LedNumber; ucLedCounter++){
+		Leds[ucLedCounter]->Off();
+	}
 }
 

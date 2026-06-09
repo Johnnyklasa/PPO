@@ -23,8 +23,8 @@ void LedBoard::On(unsigned char ucLed){
 
 
 void LedBoard::Off(){
-	for (std::vector<Led*>::iterator it = Leds.begin(); it != Leds.end(); ++it) {
-	        (*it)->Off();
-	    }
+	for (unsigned char ucLedCounter=0; ucLedCounter<LedNumber; ucLedCounter++){
+		Leds[ucLedCounter]->Off();
+	}
 }
 

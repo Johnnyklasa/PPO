@@ -24,6 +24,9 @@ void LedBoard::On(unsigned char ucLed){
 
 void LedBoard::Off(){
 	for (std::vector<Led*>::iterator it = Leds.begin(); it != Leds.end(); ++it) {
+	        // 'it' zachowuje się jak wskaźnik na element wektora.
+	        // Skoro elementem jest wskaźnik (Led*), to musimy go najpierw
+	        // wyłuskać (*it), a potem wywołać metodę (->Off())
 	        (*it)->Off();
 	    }
 }

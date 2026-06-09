@@ -17,14 +17,14 @@ LedBoard::LedBoard (unsigned char ucColumn){
 void LedBoard::On(unsigned char ucLed){
 		Off();
 		if(ucLed!=4){
-		Leds[ucLed]->On();
+			Leds[uiLedCtr]->On();
 		}
 }
 
 
 void LedBoard::Off(){
-	for (std::vector<Led*>::iterator it = Leds.begin(); it != Leds.end(); ++it) {
-	        (*it)->Off();
-	    }
+	for (std::vector<Led*>::iterator ){
+		Leds[ucLedCounter]->Off();
+	}
 }
 

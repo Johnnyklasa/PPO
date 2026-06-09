@@ -1,6 +1,5 @@
 #pragma once
 #include <stdint.h>
-#include <vector>
 #include "Led.h"
 
 constexpr unsigned int LedNumber =4;
@@ -12,6 +11,5 @@ class LedBoard
 		void Off();
 		void On(unsigned char ucLed);
 	private:
-		std::vector<Led*> Leds;
-
+		Led *Leds[4];
 };
