@@ -1,0 +1,3 @@
+../src/LedBoard.cpp:6:1:LedBoard::LedBoard(unsigned char)	2
+../src/LedBoard.cpp:17:6:void LedBoard::On(unsigned char)	2
+../src/LedBoard.cpp:25:6:void LedBoard::Off()	2

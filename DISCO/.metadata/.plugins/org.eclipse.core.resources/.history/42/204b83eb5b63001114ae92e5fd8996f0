@@ -1,0 +1,29 @@
+#include "Led.h"
+#include "Keyboard.h"
+
+Led::Led(unsigned char ucColumntoSet, unsigned char ucRowtoSet) : ucColumn(ucColmumnToSet), ucRow(ucRowToSet) {
+		Redraw(LCD_COLOR_BLUE);
+}
+
+void Led::Redraw(uint32_t FillColor){
+
+		unsigned int Xpos = ucColumn * RectWidth;
+		unsigned int Ypos = ucRow * RectHigh;
+		BSP_LCD_SetTextColor(FillColor);
+		BSP_LCD_FillRect(Xpos, Ypos, RectWidth ,RectHigh);
+		BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
+		BSP_LCD_DrawRect(Xpos, Ypos,RectWidth,RectHigh);
+		BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
+		BSP_LCD_SetBackColor(LCD_COLOR_RED);
+
+		unsigned int uitextX = Xpos + 5;
+		unsigned int uitextY = Ypos + 5;
+
+		BSP_LCD_DisplayChar(uitextX, uitextY, Number0 + ucRow);
+	}
+void Led::On(){
+	Redraw(LCD_COLOR_GREEN);
+}
+void Led::Off(){
+	LCD_COLOR_BLUE);
+}

@@ -1,0 +1,36 @@
+#include <stm32f4xx_hal.h>
+
+#include "KeyboardLed.h"
+
+int main()
+{
+
+	KeyboardLed Keyboard(0);
+	LedBoard Led(2);
+	while(true) {
+		ButtonState eState = Keyboard.eRead();
+		switch(eState){
+		case BUTTON_1:
+		LedBoard->On(3);
+		case BUTTON_2:
+		LedBoard->On(2);
+		case BUTTON_2:
+		LedBoard->On(1);
+		case BUTTON_3:
+		LedBoard->On(0);
+		break;
+	default : LedBoard->Off(); // <- !!!
+		break;
+		}
+
+	HAL_Delay(100);
+	}
+}
+
+if (eState!=NONE){
+	Led.On(3-eState);
+}
+else {
+	Led.On(NONE);
+}
+

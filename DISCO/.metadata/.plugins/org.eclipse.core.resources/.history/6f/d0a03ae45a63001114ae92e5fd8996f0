@@ -1,0 +1,27 @@
+#include "Led.h"
+#include "LedBoard.h"
+
+extern LedBoard myLedBoard;
+	Led::Led(unsigned char ucColumntoSet, unsigned char ucRow) {
+
+		Redraw(LCD_COLOR_BLUE,uiButtonCounter);
+
+
+}
+
+void LedBoard::Redraw(uint32_t FillColor, uint8_t number){
+
+		unsigned int Xpos = ucColumn * RectWidth;
+		unsigned int Ypos = number * RectHigh;
+		BSP_LCD_SetTextColor(FillColor);
+		BSP_LCD_FillRect(Xpos, Ypos, RectWidth ,RectHigh);
+		BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
+		BSP_LCD_DrawRect(Xpos, Ypos,RectWidth,RectHigh);
+		BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
+		BSP_LCD_SetBackColor(LCD_COLOR_RED);
+
+		unsigned int uitextX = Xpos + 5;
+		unsigned int uitextY = Ypos + 5;
+
+		BSP_LCD_DisplayChar(uitextX, uitextY, Number0 + number);
+	}

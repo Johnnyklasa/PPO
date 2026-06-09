@@ -1,0 +1,27 @@
+#pragma once
+#include <stdint.h>
+#include "Led.h"
+
+constexpr unsigned int
+/*class LedBoard{
+	public:
+	LedBoard(unsigned int uiLedColumn);
+	void On(unsigned int uiLedCtr);
+	void Off();
+	private:
+	unsigned int uiCurrOn;
+	unsigned int uiLedPos;
+	void DrawButton(uint32_t FillColor, uint8_t number);
+};
+*/
+
+
+class LedBoard
+{
+	public:
+		LedBoard (unsigned char ucColumn);
+		void Off();
+		void On(unsigned char);
+	private:
+		Led *Leds[4];
+};

@@ -1,0 +1,26 @@
+#include "LedBoard.h"
+#include "Led.h"
+#include "Keyboard.h"
+
+
+LedBoard::LedBoard (unsigned char ucColumn){
+	for (unsigned char ucLedCounter=0; ucLedCounter<LedNumber; ucLedCounter++){
+		Leds[ucLedCounter] = new Led(ucColumn,ucLedCounter);
+	}
+}
+
+
+
+
+void LedBoard::On(unsigned char ucLed){
+		Off();
+		Leds[ucLed]->On();
+}
+
+
+void LedBoard::Off(){
+	for (unsigned char ucLedCounter=0; ucLedCounter<LedNumber; ucLedCounter++){
+		Leds[ucLedCounter]->Off();
+	}
+}
+

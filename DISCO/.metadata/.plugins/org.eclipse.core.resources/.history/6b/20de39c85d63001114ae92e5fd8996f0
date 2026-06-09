@@ -1,0 +1,44 @@
+#include "LedBoard.h"
+#include "Led.h"
+#include "Keyboard.h"
+
+LedBoard::LedBoard(unsigned char ucLedColumn) : uiLedPos(uiLedColumn){
+	uiCurrOn =NONE;
+	BSP_LCD_Init();
+	BSP_LCD_SetFont(&Font24);
+	unsigned int uiLCDHeight = BSP_LCD_GetYSize();
+	unsigned int uiButtonCounter= 0;
+	for (uiButtonCounter = 0; uiButtonCounter * RectHigh< uiLCDHeight; uiButtonCounter++) {
+		  DrawButton(LCD_COLOR_BLUE,uiButtonCounter);
+	}
+}
+
+LedBoard::LedBoard (unsigned char ucColumn){
+	BSP_LCD_Init();
+	BSP_LCD_SetFont(&Font24);
+	Led Led_0(ucColumn,0);
+	Led Led_1(ucColumn,1);
+	Led Led_2(ucColumn,2);
+	Led Led_3(ucColumn,3);
+
+}
+
+
+
+
+void LedBoard::On(unsigned int uiLedCtr){
+		if (uiLedCtr==uiCurrOn){
+			return;
+		}
+		if (uiCurrOn!=NONE){
+			DrawButton(LCD_COLOR_BLUE, uiCurrOn); //sciagamy palucha
+		}
+		if (uiLedCtr!=NONE){
+			DrawButton(LCD_COLOR_GREEN, uiLedCtr); //kladziemy palucha
+		}
+		uiCurrOn = uiLedCtr;
+}
+void LedBoard::Off(){
+	On(NONE);
+}
+

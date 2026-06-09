@@ -1,0 +1,28 @@
+#include "LedBoard.h"
+#include "Led.h"
+#include "Keyboard.h"
+
+
+LedBoard::LedBoard (unsigned char ucColumn){
+	BSP_LCD_Init();
+	BSP_LCD_SetFont(&Font24);
+	for (unsigned char ucLedCounter=0; ucLedCounter<LedNumber; ucLedCounter++){
+		Leds[ucLedCounter] = new Led(ucColumn,ucLedCounter);
+	}
+}
+
+
+
+
+void LedBoard::On(unsigned int uiLedCtr){
+		for (unsigned char ucLedCounter=0; ucLedCounter<LedNumber; ucLedCounter++){
+			Leds[ucLedCounter]->Off();
+		}
+		Leds[ucLedCounter]->On();
+}
+
+
+void LedBoard::Off(){
+	On(NONE);
+}
+

@@ -5,26 +5,29 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/KeyboardTs.cpp \
-../src/KeyboardTsLcd.cpp \
-../src/ledlcd.cpp 
+../src/Keyboard.cpp \
+../src/KeyboardLed.cpp \
+../src/Led.cpp \
+../src/LedBoard.cpp 
 
 CXX_SRCS += \
 ../src/main.cxx 
 
 OBJS += \
-./src/KeyboardTs.o \
-./src/KeyboardTsLcd.o \
-./src/ledlcd.o \
+./src/Keyboard.o \
+./src/KeyboardLed.o \
+./src/Led.o \
+./src/LedBoard.o \
 ./src/main.o 
 
 CXX_DEPS += \
 ./src/main.d 
 
 CPP_DEPS += \
-./src/KeyboardTs.d \
-./src/KeyboardTsLcd.d \
-./src/ledlcd.d 
+./src/Keyboard.d \
+./src/KeyboardLed.d \
+./src/Led.d \
+./src/LedBoard.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -36,7 +39,7 @@ src/%.o src/%.su src/%.cyclo: ../src/%.cxx src/subdir.mk
 clean: clean-src
 
 clean-src:
-	-$(RM) ./src/KeyboardTs.cyclo ./src/KeyboardTs.d ./src/KeyboardTs.o ./src/KeyboardTs.su ./src/KeyboardTsLcd.cyclo ./src/KeyboardTsLcd.d ./src/KeyboardTsLcd.o ./src/KeyboardTsLcd.su ./src/ledlcd.cyclo ./src/ledlcd.d ./src/ledlcd.o ./src/ledlcd.su ./src/main.cyclo ./src/main.d ./src/main.o ./src/main.su
+	-$(RM) ./src/Keyboard.cyclo ./src/Keyboard.d ./src/Keyboard.o ./src/Keyboard.su ./src/KeyboardLed.cyclo ./src/KeyboardLed.d ./src/KeyboardLed.o ./src/KeyboardLed.su ./src/Led.cyclo ./src/Led.d ./src/Led.o ./src/Led.su ./src/LedBoard.cyclo ./src/LedBoard.d ./src/LedBoard.o ./src/LedBoard.su ./src/main.cyclo ./src/main.d ./src/main.o ./src/main.su
 
 .PHONY: clean-src
 

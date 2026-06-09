@@ -1,2 +1,0 @@
-../src/KeyboardTsLcd.cpp:5:1:KeyboardTsLcd::KeyboardTsLcd(unsigned char)	1
-../src/KeyboardTsLcd.cpp:11:13:ButtonState KeyboardTsLcd::eRead()	1
